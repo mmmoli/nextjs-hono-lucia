@@ -13,13 +13,14 @@
     "build-cf-types": "wrangler types --env-interface CloudflareEnv env.d.ts",
     "drizzle:generate": "drizzle-kit generate:sqlite",
     "drizzle:studio": "drizzle-kit studio",
-    "migrate": "tsx ./src/services/db/migrate.ts"
+    "migrate": "tsx ./src/services/db/migrate.ts",
+    "ui:add": "bunx shadcn-ui@latest add"
   },
   "dependencies": {
     "@hono/swagger-ui": "^0.2.1",
     "@hono/zod-openapi": "^0.11.0",
     "@hono/zod-validator": "^0.2.1",
-    "@hookform/resolvers": "^3.3.4",
+    "@hookform/resolvers": "^3.4.0",
     "@libsql/client": "^0.6.0",
     "@lucia-auth/adapter-drizzle": "^1.0.7",
     "@radix-ui/react-label": "^2.0.2",
@@ -43,13 +44,13 @@
     "oslo": "^1.2.0",
     "react": "^18",
     "react-dom": "^18",
-    "react-hook-form": "^7.51.3",
+    "react-hook-form": "^7.51.4",
     "resend": "^3.2.0",
     "sonner": "^1.4.41",
     "tailwind-merge": "^2.2.2",
     "tailwindcss-animate": "^1.0.7",
     "tsx": "^4.7.2",
-    "zod": "^3.22.5"
+    "zod": "^3.23.8"
   },
   "devDependencies": {
     "@cloudflare/next-on-pages": "1",

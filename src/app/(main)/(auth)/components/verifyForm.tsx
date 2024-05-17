@@ -6,7 +6,7 @@ import { useForm } from "react-hook-form";
 import { useMutation } from "@tanstack/react-query";
 import { Loader2 } from "lucide-react";
 
-import { Button } from "@/components/ui/button";
+import { Button } from "~ui/button";
 import {
   Form,
   FormControl,
@@ -15,13 +15,13 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from "@/components/ui/form";
+} from "~ui/form";
 import {
   InputOTP,
   InputOTPGroup,
   InputOTPSeparator,
   InputOTPSlot,
-} from "@/components/ui/input-otp";
+} from "~ui/input-otp";
 import { VerifySchema, VerifySchemaType } from "@/schemas/verifySchema";
 import { client } from "@/server/client";
 import { cn } from "@/lib/utils";
@@ -48,20 +48,19 @@ function VerifyForm() {
   >({
     mutationKey: ["verify"],
     mutationFn: async (input) => {
-
       const response = await $post({
         json: {
           ...input,
         },
       });
 
-      const data = await response.json() as any;
+      const data = (await response.json()) as any;
 
       if (data.error) {
         throw new Error(data.error);
       }
 
-      return data
+      return data;
     },
     onSuccess: (data) => {
       toast.success("Verification code verified successfully!");
@@ -80,7 +79,7 @@ function VerifyForm() {
       <form
         onSubmit={form.handleSubmit((values) => mutate(values))}
         className="space-y-6"
-        >
+      >
         <FormField
           control={form.control}
           name="code"
@@ -92,7 +91,7 @@ function VerifyForm() {
                   maxLength={6}
                   {...field}
                   pattern={REGEXP_ONLY_DIGITS_AND_CHARS}
-                  >
+                >
                   <InputOTPGroup>
                     <InputOTPSlot index={0} />
                     <InputOTPSlot index={1} />
@@ -113,7 +112,7 @@ function VerifyForm() {
               <FormMessage />
             </FormItem>
           )}
-          />
+        />
 
         <Button type="submit" disabled={isPending}>
           <Loader2
@@ -121,7 +120,7 @@ function VerifyForm() {
               [`inline`]: isPending,
               [`hidden`]: !isPending,
             })}
-            />
+          />
           Submit
         </Button>
       </form>

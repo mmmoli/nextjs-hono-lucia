@@ -1,10 +1,15 @@
 import TanstackProviders from "@/components/providers/tanstack-provider";
-import { Toaster } from "@/components/ui/sonner";
+import { Toaster } from "~ui/sonner";
 
 export default function MainLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  return <TanstackProviders><Toaster />{children}</TanstackProviders>;
+  return (
+    <TanstackProviders>
+      <Toaster />
+      {children}
+    </TanstackProviders>
+  );
 }

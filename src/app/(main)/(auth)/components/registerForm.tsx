@@ -12,10 +12,10 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from "@/components/ui/form";
+} from "~ui/form";
 import { RegisterSchema, RegisterSchemaType } from "@/schemas/registerSchema";
-import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
+import { Input } from "~ui/input";
+import { Button } from "~ui/button";
 
 import { cn } from "@/lib/utils";
 import { client } from "@/server/client";
@@ -40,8 +40,8 @@ function RegisterForm() {
           ...input,
         },
       });
-      
-      const data = await response.json() as any
+
+      const data = (await response.json()) as any;
 
       if (data.error) {
         throw new Error(data.error);

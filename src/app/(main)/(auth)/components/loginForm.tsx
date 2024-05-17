@@ -14,9 +14,9 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
+} from "~ui/form";
+import { Input } from "~ui/input";
+import { Button } from "~ui/button";
 
 import { cn } from "@/lib/utils";
 import { client } from "@/server/client";
@@ -24,8 +24,8 @@ import { LoginSchema, LoginSchemaType } from "@/schemas/loginSchema";
 import { toast } from "sonner";
 
 function LoginForm() {
-  const router = useRouter()
-  
+  const router = useRouter();
+
   const $post = client.api.auth.login.$post;
 
   const { mutate, isPending } = useMutation<
@@ -44,20 +44,19 @@ function LoginForm() {
         },
       });
 
-      const data = await response.json() as any;
+      const data = (await response.json()) as any;
 
       if (data.error) {
         throw new Error(data.error);
       }
 
-      return data
-
+      return data;
     },
     onSuccess: (data) => {
-      console.log("success 🟢:", data)
+      console.log("success 🟢:", data);
       toast.success("Login successful");
       form.reset();
-      router.push("/")  
+      router.push("/");
     },
     onError: (error) => {
       toast.error(error.message);
@@ -132,7 +131,3 @@ function LoginForm() {
 }
 
 export default LoginForm;
-
-
-
-

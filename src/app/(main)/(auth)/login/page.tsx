@@ -1,12 +1,6 @@
 import Link from "next/link";
 
-import {
-  Card,
-  CardContent,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "~ui/card";
 import LoginForm from "../components/loginForm";
 
 export default function LoginPage() {
