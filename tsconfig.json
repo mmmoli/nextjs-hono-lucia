@@ -19,9 +19,11 @@
     ],
     "paths": {
       "@/*": ["./src/*"],
-      "~shared/*": ["./src/shared/*"],
-      "~ui/*": ["./src/shared/design-system/ui/*"],
-      "~ui/utils": ["./src/shared/design-system/utils"]
+      "~app/*": ["./src/lib/app/*"],
+      "~features/*": ["./src/lib/features/*"],
+      "~shared/*": ["./src/lib/shared/*"],
+      "~ui/*": ["./src/lib/shared/design-system/ui/*"],
+      "~ui/utils": ["./src/lib/shared/design-system/utils"]
     },
     "types": ["@cloudflare/workers-types/2023-07-01"]
   },

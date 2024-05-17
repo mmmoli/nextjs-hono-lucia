@@ -1,11 +1,4 @@
-import { twMerge } from "tailwind-merge";
-import { type ClassValue, clsx } from "clsx";
-
-import { clientEnvs } from "@/env/client";
-
-export function cn(...inputs: ClassValue[]) {
-  return twMerge(clsx(inputs));
-}
+import { clientEnvs } from "~shared/config/client";
 
 export function getBaseUrl() {
   if (typeof window !== "undefined") return window.location.origin;

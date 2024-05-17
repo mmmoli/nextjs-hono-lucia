@@ -1,12 +1,8 @@
 import "server-only";
 
 import { cache } from "react";
-
-import { Context } from "hono";
-import { getCookie } from "hono/cookie";
-import { cookies, headers } from "next/headers";
-
-import { lucia } from "@/services/auth";
+import { cookies } from "next/headers";
+import { lucia } from "~shared/services/auth";
 import { Session, User } from "lucia";
 
 export const validateRequest = cache(

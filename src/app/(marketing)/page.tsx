@@ -16,8 +16,20 @@ export default async function Home() {
         </div>
       ) : (
         <div className="flex flex-col gap-y-4">
-          <Link href="/register" className="flex bg-zinc-900 text-zinc-100 p-4 rounded-md"><User2 className="w-6 h-6 mr-2" />Register</Link>
-          <Link href="/login" className="flex bg-zinc-900 text-zinc-100 p-4 rounded-md"><LogIn className="w-6 h-6 mr-2" />Login</Link>
+          <Link
+            href="/"
+            className="flex bg-zinc-900 text-zinc-100 p-4 rounded-md"
+          >
+            <User2 className="w-6 h-6 mr-2" />
+            Register
+          </Link>
+          <Link
+            href="/"
+            className="flex bg-zinc-900 text-zinc-100 p-4 rounded-md"
+          >
+            <LogIn className="w-6 h-6 mr-2" />
+            Login
+          </Link>
         </div>
       )}
     </main>

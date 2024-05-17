@@ -1,13 +1,13 @@
 import type { Config } from "drizzle-kit";
 
-import { serverEnvs } from "@/env/server";
+import { envs } from "~shared/config/server";
 
 export default {
   driver: "turso",
   schema: "./src/services/db/schema/*",
   out: "./src/services/db/migrations",
   dbCredentials: {
-    url: serverEnvs.DATABASE_URL,
+    url: envs.DATABASE_URL,
   },
   // Print all statements
   verbose: true,

@@ -4,8 +4,8 @@ import createJiti from "jiti";
 
 const jiti = createJiti(new URL(import.meta.url).pathname);
 
-jiti("./src/env/server");
-jiti("./src/env/client");
+jiti("./src/lib/shared/config/server");
+jiti("./src/lib/shared/config/client");
 
 // Here we use the @cloudflare/next-on-pages next-dev module to allow us to use bindings during local development
 // (when running the application with `next dev`), for more information see:
